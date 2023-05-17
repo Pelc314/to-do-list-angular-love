@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
-import { State } from "@ngxs/store";
-import { TodoStateModel } from "src/todo-state.model";
+import { Action, State, StateContext } from "@ngxs/store";
+import { TodoModel, TodoStateModel } from "src/todo-state.model";
+import { AddTodo } from "./todo.actions";
 
 @State<TodoStateModel>({
     name: "todo",
@@ -9,4 +10,20 @@ import { TodoStateModel } from "src/todo-state.model";
     },
 })
 @Injectable()
-export class TodoState { }
+export class TodoState { 
+    @Action(AddTodo)
+    addTodo(ctx: StateContext<TodoStateModel>,action:AddTodo){
+        const state = ctx.getState();
+
+        const newItem: TodoModel ={
+            id : Math.floor(Math.random()*1000),
+            title: action.title,
+            isActive: true
+        };
+
+        ctx.setState({
+            ...state,
+            items:[...state.items,newItem]
+        });
+    }
+}
