@@ -1,9 +1,9 @@
 export interface TodoModel {
     id: number;
     title: string;
-    isActive:boolean
+    isActive: boolean
 }
 
-export interface TodoStateModel{
-    items:TodoModel[];
+export interface TodoStateModel {
+    items: TodoModel[];
 }
