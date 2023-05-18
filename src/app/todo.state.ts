@@ -13,6 +13,7 @@ import { AddTodo } from "./todo.actions";
 export class TodoState {
     @Action(AddTodo)
     addTodo(ctx: StateContext<TodoStateModel>, action: AddTodo) {
+        console.log(ctx);
         const state = ctx.getState();
 
         const newItem: TodoModel = {

@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { TodoState } from './todo.state';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxsModule.forRoot([]),
+    NgxsModule.forRoot([TodoState]),
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,

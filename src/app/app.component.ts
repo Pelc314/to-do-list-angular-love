@@ -23,7 +23,7 @@ export class AppComponent implements OnDestroy {
   @Select(TodoSelectors.activeItems)
   activeItems$!: Observable<TodoModel[]>;
 
-  itemsLocal:string[] = [];
+  itemsLocal: string[] = [];
 
   dectructor: Subject<boolean> = new Subject<boolean>();
   title = 'to-do-list-angular-love';
