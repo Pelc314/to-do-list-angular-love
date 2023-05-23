@@ -10,20 +10,20 @@ import { AddTodo } from "./todo.actions";
     },
 })
 @Injectable()
-export class TodoState { 
+export class TodoState {
     @Action(AddTodo)
-    addTodo(ctx: StateContext<TodoStateModel>,action:AddTodo){
+    addTodo(ctx: StateContext<TodoStateModel>, action: AddTodo) {
         const state = ctx.getState();
 
-        const newItem: TodoModel ={
-            id : Math.floor(Math.random()*1000),
+        const newItem: TodoModel = {
+            id: Math.floor(Math.random() * 1000),
             title: action.title,
             isActive: true
         };
 
         ctx.setState({
             ...state,
-            items:[...state.items,newItem]
+            items: [...state.items, newItem]
         });
     }
 }

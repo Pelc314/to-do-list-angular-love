@@ -11,14 +11,14 @@ import { TodoModel } from 'src/todo-state.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- @Select(TodoSelectors.items)
- items$!: Observable<TodoModel[]>;
+  @Select(TodoSelectors.items)
+  items$!: Observable<TodoModel[]>;
 
- @Select(TodoSelectors.doneItems)
- doneItems$!:Observable<TodoModel[]>;
+  @Select(TodoSelectors.doneItems)
+  doneItems$!: Observable<TodoModel[]>;
 
- @Select(TodoSelectors.activeItems)
- activeItems$!:Observable<TodoModel[]>;
+  @Select(TodoSelectors.activeItems)
+  activeItems$!: Observable<TodoModel[]>;
 
   title = 'to-do-list-angular-love';
   newTitle!: string;

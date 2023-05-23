@@ -14,7 +14,7 @@ export class TodoSelectors {
     }
 
     @Selector([TodoState])
-    static activeItems(state:TodoStateModel){
-        return state.items.filter((it)=> it.isActive); 
+    static activeItems(state: TodoStateModel) {
+        return state.items.filter((it) => it.isActive);
     }
 }
