@@ -16,7 +16,7 @@ import { FormControl } from '@angular/forms';
 export class AppComponent implements OnDestroy {
   title = 'to-do-list-angular-love';
   newTitle: string = "";
- 
+
   @Select(TodoSelectors.items)
   items$!: Observable<TodoModel[]>;
 
@@ -28,7 +28,7 @@ export class AppComponent implements OnDestroy {
 
   dectructor: Subject<boolean> = new Subject<boolean>();
   todoControl = new FormControl("Text");
- 
+
   constructor(private store: Store) {
     this.todoControl.valueChanges.pipe(debounceTime(500), takeUntil(this.dectructor)).subscribe(text => {
       console.log(text);
